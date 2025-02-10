@@ -9,12 +9,14 @@ public class EnemyHealth : MonoBehaviour
     float health = 2;
     Image healthBar;
     float maxHealth;
+    private GameObject hud;
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
         healthBar = GetComponentsInChildren<Image>()[1];
         healthBar.fillAmount = health / maxHealth;
+        hud = GameObject.FindGameObjectWithTag("HUD");
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
+            hud.GetComponent<PlayerScore>().score++;
             Destroy(gameObject);
         }
     }
