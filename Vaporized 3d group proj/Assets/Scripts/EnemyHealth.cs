@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     float health = 2;
     Image healthBar;
     float maxHealth;
+    [SerializeField] float scoreWorth = 1;
     private GameObject hud;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class EnemyHealth : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
-            hud.GetComponent<PlayerScore>().score++;
+            hud.GetComponent<PlayerScore>().score += scoreWorth;
             Destroy(gameObject);
         }
     }
