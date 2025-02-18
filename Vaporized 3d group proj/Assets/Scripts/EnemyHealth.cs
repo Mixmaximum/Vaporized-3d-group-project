@@ -31,7 +31,7 @@ public class EnemyHealth : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
-            hud.GetComponent<PlayerScore>().score += scoreWorth;
+            hud.GetComponent<HUDManager>().score += scoreWorth;
             Destroy(gameObject);
         }
     }

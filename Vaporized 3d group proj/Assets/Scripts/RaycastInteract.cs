@@ -12,13 +12,13 @@ public class RaycastInteract : MonoBehaviour
     private GameObject hud;
     float cost;
     float score;
-    PlayerScore playerScore;
+    HUDManager playerScore;
     // Start is called before the first frame update
     void Start()
     {
         interactText.enabled = false;
         hud = GameObject.FindGameObjectWithTag("HUD");
-        playerScore = hud.GetComponent<PlayerScore>();
+        playerScore = hud.GetComponent<HUDManager>();
     }
 
     // Update is called once per frame
@@ -44,10 +44,30 @@ public class RaycastInteract : MonoBehaviour
                     Debug.Log("Bought");
                 }
             }
+            if (hit.collider.gameObject.tag == "Core" && playerScore.holdingCore == false)
+            {
+                interactText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    hit.collider.gameObject.GetComponent<BoxCollider>().enabled = false;
+                    playerScore.holdingCore = true;
+                }
+            }
+            if (hit.collider.gameObject.tag == "Generator" && playerScore.holdingCore == true)
+            {
+                interactText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.GetComponent<Generator>().isCharging = true;
+                    playerScore.holdingCore = false;
+                }
+            }
         }
         else
         {
             interactText.enabled = false;
         }
     }
+   
 }

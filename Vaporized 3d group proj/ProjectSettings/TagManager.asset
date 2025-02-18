@@ -9,6 +9,8 @@ TagManager:
   - HUD
   - Interactable
   - Purchased
+  - Core
+  - Generator
   layers:
   - Default
   - TransparentFX
