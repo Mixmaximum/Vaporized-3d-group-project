@@ -11,6 +11,7 @@ TagManager:
   - Purchased
   - Core
   - Generator
+  - ChargedCore
   layers:
   - Default
   - TransparentFX
