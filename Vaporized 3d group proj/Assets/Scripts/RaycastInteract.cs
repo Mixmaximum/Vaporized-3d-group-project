@@ -54,7 +54,7 @@ public class RaycastInteract : MonoBehaviour
                     playerScore.holdingCore = true;
                 }
             }
-            if (hit.collider.gameObject.tag == "Generator" && playerScore.holdingCore == true)
+            if (hit.collider.gameObject.tag == "Generator" && playerScore.holdingCore == true && hit.collider.GetComponent<Generator>().isCharging == false)
             {
                 interactText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.E))
@@ -62,6 +62,16 @@ public class RaycastInteract : MonoBehaviour
                     hit.collider.GetComponent<Generator>().isCharging = true;
                     playerScore.holdingCore = false;
                 }
+            }
+            if (hit.collider.gameObject.tag == "ChargedCore")
+            {
+                interactText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.gameObject.SetActive(false);
+                    playerScore.cores++;
+                }
+
             }
         }
         else

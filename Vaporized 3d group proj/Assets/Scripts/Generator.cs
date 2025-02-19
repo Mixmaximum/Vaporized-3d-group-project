@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class Generator : MonoBehaviour
 {
     [SerializeField] float maxCharge;
+    [SerializeField] float enemyDamage = 0.1f;
     [SerializeField] GameObject fakeCore;
     [SerializeField] GameObject chargedCore;
     [SerializeField] Image chargebar;
     float currentCharge;
     public bool isCharging;
-    bool charged;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,22 +29,43 @@ public class Generator : MonoBehaviour
        if (isCharging)
        {
             fakeCore.SetActive(true);
+            chargedCore.SetActive(false);
             currentCharge += Time.deltaTime;
             chargebar.fillAmount = currentCharge / maxCharge;
             if (currentCharge >= maxCharge)
             {
+                fakeCore.SetActive(false);
+                chargedCore.SetActive(true); 
                 isCharging = false;
+                currentCharge = 0;
             }
-       }
-       if (charged)
-       {
-
        }
     }
 
     public void Charge()
     {
-        fakeCore.SetActive(true);
         isCharging = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && isCharging && currentCharge >= 0)
+        {
+            currentCharge -= enemyDamage;
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && isCharging && currentCharge >= 0)
+        {
+            currentCharge -= enemyDamage;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy" && isCharging && currentCharge >= 0)
+        {
+            currentCharge -= enemyDamage;
+        }
     }
 }

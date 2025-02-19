@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a72100f23af1546b704c02f5beb954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCharge: 2
+  maxCharge: 23
   fakeCore: {fileID: 2601671579251787973}
   chargedCore: {fileID: 5739738183896992221}
   chargebar: {fileID: 5654480777485134519}
@@ -318,9 +318,9 @@ GameObject:
   - component: {fileID: 8097085182891781157}
   - component: {fileID: 706878237579784135}
   - component: {fileID: 1134555992167359423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChargedCore
-  m_TagString: Untagged
+  m_TagString: ChargedCore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

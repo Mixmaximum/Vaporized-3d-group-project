@@ -71,4 +71,17 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
+        {
+            health -= 1;
+            healthBar.fillAmount = health / maxHealth;
+            if (health <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene(levelToLoad);
+            }
+        }
+    }
 }

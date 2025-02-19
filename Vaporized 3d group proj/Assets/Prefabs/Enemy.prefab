@@ -104,7 +104,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -173,7 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf95ddd9d0c199438644ac6c25a3266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseDistance: 50
+  chaseDistance: 20
+  genChaseDist: 4
 --- !u!114 &5553055559171769163
 MonoBehaviour:
   m_ObjectHideFlags: 0
