@@ -12,6 +12,7 @@ TagManager:
   - Core
   - Generator
   - ChargedCore
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
