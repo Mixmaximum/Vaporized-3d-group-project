@@ -121,5 +121,5 @@ MonoBehaviour:
   enemy: {fileID: 792694607248518031, guid: 2a4486be1045b2a45997a13998cfd37f, type: 3}
   spawnRangeX: 12
   spawnRangeZ: 12
-  spawnRate: 4
-  spawnAmount: 1
+  spawnRate: 5
+  spawnAmount: 5
