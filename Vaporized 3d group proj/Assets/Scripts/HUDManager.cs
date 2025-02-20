@@ -11,7 +11,7 @@ public class HUDManager : MonoBehaviour
     [SerializeField] public int cores;
     [SerializeField] private TextMeshProUGUI corePopUp;
     [SerializeField] private TextMeshProUGUI coreHoldingPopUp;
-    int maxCores;
+    public int maxCores;
     public bool holdingCore;
     // Start is called before the first frame update
     void Start()
