@@ -13,6 +13,7 @@ TagManager:
   - Generator
   - ChargedCore
   - PauseMenu
+  - Spawner
   layers:
   - Default
   - TransparentFX

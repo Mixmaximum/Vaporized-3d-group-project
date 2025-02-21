@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
-    float health = 2;
+    public float health = 2;
     Image healthBar;
     float maxHealth;
     [SerializeField] float scoreWorth = 1;

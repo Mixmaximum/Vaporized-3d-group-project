@@ -12,8 +12,8 @@ public class EnemySpawn : MonoBehaviour
     [Space(5)]
 
     [Header ("Spawn Info")]
-    [SerializeField] float spawnRate = 2;
-    [SerializeField] float spawnAmount;
+    [SerializeField] public float spawnRate = 2;
+    [SerializeField] public int spawnAmount;
     [Space(5)]
 
     float currentTime;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8307033337390358063}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,4 +122,4 @@ MonoBehaviour:
   spawnRangeX: 12
   spawnRangeZ: 12
   spawnRate: 5
-  spawnAmount: 5
+  spawnAmount: 2
