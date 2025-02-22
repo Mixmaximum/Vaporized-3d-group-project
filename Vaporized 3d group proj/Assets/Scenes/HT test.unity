@@ -6959,6 +6959,11 @@ PrefabInstance:
       propertyPath: waveNumberText
       value: 
       objectReference: {fileID: 666179633}
+    - target: {fileID: 4223063266055060630, guid: b446876bedd50a147b20a49c021c8958,
+        type: 3}
+      propertyPath: addedDifficulty
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4859277231805367673, guid: b446876bedd50a147b20a49c021c8958,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7367,9 +7372,9 @@ SceneRoots:
   - {fileID: 52380329}
   - {fileID: 2537142432581621543}
   - {fileID: 135603315}
-  - {fileID: 5949641465716495493}
   - {fileID: 1437734634}
   - {fileID: 2391619256034078783}
+  - {fileID: 5949641465716495493}
   - {fileID: 1036784608}
   - {fileID: 1807240623}
   - {fileID: 5153351543032383078}
