@@ -13,6 +13,7 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coreHoldingPopUp;
     public int maxCores;
     public bool holdingCore;
+    public bool coresDone;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,13 @@ public class HUDManager : MonoBehaviour
         else
         {
             coreHoldingPopUp.text = " ";
+        }
+
+        if (cores == maxCores)
+        {
+            corePopUp.enabled = false;
+            coreHoldingPopUp.enabled = false;
+            coresDone = true;
         }
     }
 }

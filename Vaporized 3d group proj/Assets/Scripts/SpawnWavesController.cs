@@ -27,11 +27,15 @@ public class SpawnWavesController : MonoBehaviour
     private float activeDifficulty;
     private float defaultEnemyHp;
     private float defaultEnemySpeed;
+    public float currentHP;
+    public float currentSpeed;
     // Start is called before the first frame update
     void Start()
     {
         defaultEnemyHp = enemyPrefab.GetComponent<EnemyHealth>().health;
+        currentHP = defaultEnemyHp;
         defaultEnemySpeed = enemyPrefab.GetComponent<NavMeshAgent>().speed;
+        currentSpeed = defaultEnemySpeed;
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
         enemySpawnScripts = new EnemySpawn[spawners.Length];
         for (int i = 0; i < spawners.Length; i++)
@@ -56,8 +60,11 @@ public class SpawnWavesController : MonoBehaviour
             currentWaveTime = waveTimer;
             waveNumberText.text = ("Wave: ") + waveNumber; 
             activeDifficulty = waveNumber * (1 + addedDifficulty);
-            enemyPrefab.GetComponent<EnemyHealth>().health += activeDifficulty;
-            enemyPrefab.GetComponent<NavMeshAgent>().speed += activeDifficulty;
+            Debug.Log(activeDifficulty);
+            //enemyPrefab.GetComponent<EnemyHealth>().health += activeDifficulty;
+            currentHP += activeDifficulty;
+            currentSpeed += activeDifficulty;
+            //enemyPrefab.GetComponent<NavMeshAgent>().speed += activeDifficulty;
 
             for (int i = 0; i < spawners.Length; i++)
             {

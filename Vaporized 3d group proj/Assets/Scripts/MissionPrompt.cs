@@ -45,7 +45,7 @@ public class MissionPrompt : MonoBehaviour
             hudMissionPrompt.text = (zeroCoresMissionPopUp);
             timer += Time.deltaTime;
         }
-        else if (hudManager.cores == hudManager.maxCores && timer2 <= popUpTime2)
+        else if (hudManager.coresDone && timer2 <= popUpTime2)
         {
             hudMissionPrompt.text = (allCoresMissionPopUp);
             timer2 += Time.deltaTime;
@@ -61,7 +61,7 @@ public class MissionPrompt : MonoBehaviour
         {
             pauseMissionPrompt.text = (zeroCoresPausePopUp);
         }
-        else if (hudManager.cores == hudManager.maxCores)
+        else if (hudManager.coresDone)
         {
             pauseMissionPrompt.text = (allCoresPausePopUp);
         }
