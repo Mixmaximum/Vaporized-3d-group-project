@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4223063266055060630}
   m_Layer: 0
   m_Name: WaveManager
-  m_TagString: Untagged
+  m_TagString: WaveController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,5 +50,7 @@ MonoBehaviour:
   enemySpawnScripts: []
   waveTimerText: {fileID: 0}
   waveNumberText: {fileID: 0}
-  waveTimer: 62
+  waveTimer: 30
   addedDifficulty: 0.05
+  currentHP: 0
+  currentSpeed: 0

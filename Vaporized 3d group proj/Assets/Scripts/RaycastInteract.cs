@@ -33,7 +33,6 @@ public class RaycastInteract : MonoBehaviour
                 interactText.enabled = true; // makes interact text pop up
                 cost = hit.collider.gameObject.GetComponent<ObjectCosts>().cost;
                 score = playerScore.score; // Get the score from the hud and make it a float, keep that updated
-                score = playerScore.score; // Get the score from the hud and make it a float, keep that updated
                 if (score >= cost && Input.GetKeyDown(KeyCode.E))
                 {
                     playerScore.score -= cost; //subtract the cost from the score on the hud
@@ -72,6 +71,17 @@ public class RaycastInteract : MonoBehaviour
                     playerScore.cores++;
                 }
 
+            }
+            if (hit.collider.gameObject.tag == "Upgrader")
+            {
+                interactText.enabled = true;
+                cost = hit.collider.gameObject.GetComponent<UpgraderObject>().cost;
+                score = playerScore.score;
+                if (score >= cost && Input.GetKeyDown(KeyCode.E))
+                {
+                    playerScore.score -= cost;
+                    hit.collider.gameObject.GetComponent<UpgraderObject>().Interact();
+                }
             }
         }
         else

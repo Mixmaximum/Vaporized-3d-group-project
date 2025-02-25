@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Exfil : MonoBehaviour
 {
+    [SerializeField] string teleportLocation = "Win";
     [SerializeField] private float exfilTime;
     [SerializeField] private TextMeshProUGUI countDownText;
     private GameObject hud;
     private HUDManager hudManager;
     private BoxCollider boxCollider;
-    private MeshRenderer meshRenderer;
     private float timer;
     
     // Start is called before the first frame update
@@ -19,28 +20,36 @@ public class Exfil : MonoBehaviour
         hud = GameObject.FindGameObjectWithTag("HUD");
         hudManager = hud.GetComponent<HUDManager>();
         boxCollider = GetComponent<BoxCollider>();
-        meshRenderer = GetComponent<MeshRenderer>();
         boxCollider.enabled = false;
-        meshRenderer.enabled = false;
         countDownText.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hudManager.coresDone)
+        if (hudManager.coresDone && boxCollider.enabled == false)
         {
             boxCollider.enabled = true;
-            meshRenderer.enabled = true;
             countDownText.enabled = true;
+            timer = exfilTime;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (timer < exfilTime)
+        if (other.gameObject.tag == "Player")
         {
-            timer += Time.deltaTime;
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                int minutes = Mathf.FloorToInt(timer / 60);
+                int seconds = Mathf.FloorToInt(timer % 60);
+                countDownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            }
+            if (timer <= 0)
+            {
+                SceneManager.LoadScene(teleportLocation);
+            }
         }
     }
 }
