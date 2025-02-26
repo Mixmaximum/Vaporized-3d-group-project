@@ -22,14 +22,14 @@ public class SpawnWavesController : MonoBehaviour
     [SerializeField] float addedDifficulty;
     [Space(5)]
 
-    private int waveNumber;
+    public int waveNumber;
     private float currentWaveTime;
     private float activeDifficulty;
     private float defaultEnemyHp;
     private float defaultEnemySpeed;
     public float currentHP;
     public float currentSpeed;
-    private float spawnIncrease = 1;
+    public int spawnAmount;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +47,7 @@ public class SpawnWavesController : MonoBehaviour
         currentWaveTime = waveTimer;
         waveNumberText.text = ("Wave: ") + waveNumber;
         activeDifficulty = 1 + addedDifficulty;
+        spawnAmount = enemySpawnScripts[0].spawnAmount;
     }
 
     // Update is called once per frame
@@ -64,12 +65,12 @@ public class SpawnWavesController : MonoBehaviour
             //enemyPrefab.GetComponent<EnemyHealth>().health += activeDifficulty;
             currentHP *= activeDifficulty;
             currentSpeed *= activeDifficulty;
-            spawnIncrease *= activeDifficulty;
+            spawnAmount ++;
             //enemyPrefab.GetComponent<NavMeshAgent>().speed += activeDifficulty;
 
             for (int i = 0; i < spawners.Length; i++)
             {
-                enemySpawnScripts[i].spawnAmount = enemySpawnScripts[i].spawnAmount + Mathf.RoundToInt(spawnIncrease);
+                enemySpawnScripts[i].spawnAmount = spawnAmount;
             }
         }
     }

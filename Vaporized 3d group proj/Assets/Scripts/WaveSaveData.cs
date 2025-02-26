@@ -2,35 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-public class Savesystem : MonoBehaviour
+using UnityEngine.InputSystem;
+
+public class WaveSaveData : MonoBehaviour
 {
     string keyWord = "123456789";
-    CharacterController characterController;
     // Start is called before the first frame update
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Save();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Load();
-        }
+
     }
 
     public void Save()
     {
-        SaveData myData = new SaveData();
-        myData.x = transform.position.x;
-        myData.y = transform.position.y;
-        myData.z = transform.position.z;
+        SaveDataW myData = new SaveDataW();
+        myData.waveNumber = GetComponent<SpawnWavesController>().waveNumber;
+        myData.currentHP = GetComponent<SpawnWavesController>().currentHP;
+        myData.currentSpeed = GetComponent<SpawnWavesController>().currentSpeed;
+        myData.spawnAmount = GetComponent<SpawnWavesController>().spawnAmount;
         string myDataString = JsonUtility.ToJson(myData);
         myDataString = EncryptDecryptData(myDataString);
         string file = Application.persistentDataPath + "/" + gameObject.name + ".json";
@@ -46,10 +41,11 @@ public class Savesystem : MonoBehaviour
             string jsonData = File.ReadAllText(file);
             jsonData = EncryptDecryptData(jsonData);
             Debug.Log(jsonData);
-            SaveData myData = JsonUtility.FromJson<SaveData>(jsonData);
-            characterController.enabled = false;
-            transform.position = new Vector3(myData.x, myData.y, myData.z);
-            characterController.enabled = true;
+            SaveDataW myData = JsonUtility.FromJson<SaveDataW>(jsonData);
+            GetComponent<SpawnWavesController>().waveNumber = myData.waveNumber;
+            GetComponent<SpawnWavesController>().currentHP = myData.currentHP;
+            GetComponent<SpawnWavesController>().currentSpeed = myData.currentSpeed;
+            GetComponent<SpawnWavesController>().spawnAmount = myData.spawnAmount;
         }
     }
 
@@ -65,10 +61,11 @@ public class Savesystem : MonoBehaviour
     }
 }
 
-[System.Serializable]
-public class SaveData
+    [System.Serializable]
+public class SaveDataW
 {
-    public float x;
-    public float y;
-    public float z;
+    public int waveNumber;
+    public float currentHP;
+    public float currentSpeed;
+    public int spawnAmount;
 }

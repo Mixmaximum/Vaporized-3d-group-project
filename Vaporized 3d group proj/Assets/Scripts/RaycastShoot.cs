@@ -7,6 +7,7 @@ public class RaycastShoot : MonoBehaviour
     [SerializeField] LayerMask layers;
     [SerializeField] private float shootDist = 10;
     [SerializeField] private float shootDelay = 0.5f;
+    [SerializeField] public float shootDamage = 1;
     private bool buttonDown;
     private float shootTimer;
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class RaycastShoot : MonoBehaviour
                 //Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.gameObject.tag == "Enemy")
                 {
-                    hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
+                    hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(shootDamage);
                 }
                 shootTimer = 0;
             }
@@ -41,5 +42,9 @@ public class RaycastShoot : MonoBehaviour
         {
             buttonDown = false;
         }
+    }
+    public void UpdateDamage(float damageIncrease)
+    {
+        shootDamage += damageIncrease;
     }
 }

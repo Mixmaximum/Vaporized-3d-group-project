@@ -34,7 +34,7 @@ public class UpgraderObject : MonoBehaviour
         Time.timeScale = 0;
         upgradeHUD.GetComponent<Canvas>().enabled = true;
         player.GetComponent<ThirdPersonController>().LockCameraPosition = true;
-        cost = cost *= costMultiplier;
+        cost = Mathf.RoundToInt(cost *= costMultiplier);
         costText.text = "Cost: " + cost;
     }
 }

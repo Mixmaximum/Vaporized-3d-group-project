@@ -8,11 +8,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     private GameObject player;
+    private GameObject upgradeHUD;
     // Use this for initialization
     void Start()
     {
         GetComponent<Canvas>().enabled = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        upgradeHUD = GameObject.FindGameObjectWithTag("UpgradeHUD");
     }
 
     // Update is called once per frame
@@ -30,17 +32,21 @@ public class PauseMenu : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 0)
         {
             Resume();
+            
         }
 
     }
 
     public void Resume()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1;
-        GetComponent<Canvas>().enabled = false;
-        player.GetComponent<ThirdPersonController>().LockCameraPosition = false;
+        if (upgradeHUD.GetComponent<Canvas>().enabled == false)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+            GetComponent<Canvas>().enabled = false;
+            player.GetComponent<ThirdPersonController>().LockCameraPosition = false;
+        }
     }
 
     public void ExitGame()
