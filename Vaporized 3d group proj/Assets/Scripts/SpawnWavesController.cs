@@ -23,7 +23,7 @@ public class SpawnWavesController : MonoBehaviour
     [Space(5)]
 
     public int waveNumber;
-    private float currentWaveTime;
+    public float currentWaveTime;
     private float activeDifficulty;
     private float defaultEnemyHp;
     private float defaultEnemySpeed;

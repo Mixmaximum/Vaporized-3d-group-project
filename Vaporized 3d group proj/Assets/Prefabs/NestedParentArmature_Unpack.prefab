@@ -828,7 +828,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   shootDist: 20
-  shootDelay: 0.09
+  shootDelay: 0.1
   shootDamage: 1
 --- !u!114 &6558419232161267330
 MonoBehaviour:
