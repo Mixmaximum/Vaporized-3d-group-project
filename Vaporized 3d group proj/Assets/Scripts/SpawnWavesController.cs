@@ -30,6 +30,12 @@ public class SpawnWavesController : MonoBehaviour
     public float currentHP;
     public float currentSpeed;
     public int spawnAmount;
+
+    private GameObject player;
+    private GameObject hud;
+    private GameObject upgrader;
+    private GameObject[] core;
+    private GameObject[] interactable;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +54,11 @@ public class SpawnWavesController : MonoBehaviour
         waveNumberText.text = ("Wave: ") + waveNumber;
         activeDifficulty = 1 + addedDifficulty;
         spawnAmount = enemySpawnScripts[0].spawnAmount;
+        player = GameObject.FindGameObjectWithTag("Player");
+        hud = GameObject.FindGameObjectWithTag("HUD");
+        upgrader = GameObject.FindGameObjectWithTag("Upgrader");
+        core = GameObject.FindGameObjectsWithTag("Core");
+        interactable = GameObject.FindGameObjectsWithTag("Interactable");
     }
 
     // Update is called once per frame
@@ -71,6 +82,17 @@ public class SpawnWavesController : MonoBehaviour
             for (int i = 0; i < spawners.Length; i++)
             {
                 enemySpawnScripts[i].spawnAmount = spawnAmount;
+            }
+            player.GetComponent<PLayerSaveData>().Save();
+            hud.GetComponent<HUDSaveData>().Save();
+            upgrader.GetComponent<UpgraderSaveData>().Save();
+            for (int i = 0; i < core.Length; i++)
+            {
+                core[i].GetComponent<CoresSaveData>().Save();
+            }
+            for (int i = 0; i < interactable.Length; i++)
+            {
+                interactable[i].GetComponent<InteractableSaveData>().Save();
             }
         }
     }
