@@ -21,6 +21,7 @@ public class ObjectCosts : MonoBehaviour
     {
          if (purchased) 
          {
+            GetComponent<Animator>().SetTrigger("Interact");
             cost = 0;
             costText.text = " ";
             transform.gameObject.tag = "Purchased";

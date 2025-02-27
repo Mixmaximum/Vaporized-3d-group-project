@@ -36,7 +36,6 @@ public class RaycastInteract : MonoBehaviour
                 if (score >= cost && Input.GetKeyDown(KeyCode.E))
                 {
                     playerScore.score -= cost; //subtract the cost from the score on the hud
-                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Interact");
                     //we know we hit an interactable object so we trigger the interact trigger
                     hit.collider.gameObject.GetComponent<ObjectCosts>().purchased = true;
                     // sets it to bought
@@ -48,8 +47,7 @@ public class RaycastInteract : MonoBehaviour
                 interactText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hit.collider.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                    hit.collider.gameObject.GetComponent<BoxCollider>().enabled = false;
+                    hit.collider.gameObject.GetComponent<CoreGrab>().grabbed = true;
                     playerScore.holdingCore = true;
                 }
             }

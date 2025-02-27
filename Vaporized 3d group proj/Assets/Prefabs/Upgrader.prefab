@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 3812498263004336359}
   - component: {fileID: 7948545461724157402}
   - component: {fileID: 482627020464383854}
+  - component: {fileID: 4183054583128183814}
   m_Layer: 6
   m_Name: Upgrader
   m_TagString: Upgrader
@@ -223,6 +224,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 20
   costMultiplier: 1.4
+--- !u!114 &4183054583128183814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913716540142067964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd715272554da4343b5ba73cdab3ce77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7118584241840029346
 GameObject:
   m_ObjectHideFlags: 0

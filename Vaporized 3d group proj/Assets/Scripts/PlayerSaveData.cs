@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using StarterAssets;
-public class Savesystem : MonoBehaviour
+public class PLayerSaveData : MonoBehaviour
 {
     string keyWord = "123456789";
     CharacterController characterController;
