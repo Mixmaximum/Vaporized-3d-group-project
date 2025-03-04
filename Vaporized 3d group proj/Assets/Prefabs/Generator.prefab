@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCharge: 23
+  enemyDamage: 0.1
   fakeCore: {fileID: 2601671579251787973}
   chargedCore: {fileID: 5739738183896992221}
   chargebar: {fileID: 5654480777485134519}
