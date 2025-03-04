@@ -18,7 +18,7 @@ public class SpawnWavesController : MonoBehaviour
     [Space(5)]
 
     [Header("Wave Info")]
-    [SerializeField] private float waveTimer;
+    [SerializeField] public float waveTimer;
     [SerializeField] float addedDifficulty;
     [Space(5)]
 
@@ -86,6 +86,7 @@ public class SpawnWavesController : MonoBehaviour
             player.GetComponent<PLayerSaveData>().Save();
             hud.GetComponent<HUDSaveData>().Save();
             upgrader.GetComponent<UpgraderSaveData>().Save();
+            GetComponent<WaveSaveData>().Save();
             for (int i = 0; i < core.Length; i++)
             {
                 core[i].GetComponent<CoresSaveData>().Save();

@@ -26,7 +26,7 @@ public class WaveSaveData : MonoBehaviour
         myData.currentHP = GetComponent<SpawnWavesController>().currentHP;
         myData.currentSpeed = GetComponent<SpawnWavesController>().currentSpeed;
         myData.spawnAmount = GetComponent<SpawnWavesController>().spawnAmount;
-        myData.currentWaveTime = GetComponent<SpawnWavesController>().currentWaveTime;
+        myData.currentWaveTime = GetComponent<SpawnWavesController>().waveTimer;
         string myDataString = JsonUtility.ToJson(myData);
         myDataString = EncryptDecryptData(myDataString);
         string file = Application.persistentDataPath + "/" + gameObject.name + ".json";
