@@ -257,8 +257,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0025024414, y: 557}
-  m_SizeDelta: {x: -512.8093, y: -1538.2654}
+  m_AnchoredPosition: {x: -0.0025024414, y: 548}
+  m_SizeDelta: {x: -431.6616, y: -1538.2654}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &230720866
 MonoBehaviour:
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Coder: Hunter Taylor (Cyron)'
+  m_text: 'Programmer: Hunter Taylor (Cyron)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b891a1b570a3b1c45b79ccae1cb6d3b0, type: 2}
   m_sharedMaterial: {fileID: 3704105291827094744, guid: b891a1b570a3b1c45b79ccae1cb6d3b0,
@@ -2284,8 +2284,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 429.99997}
-  m_SizeDelta: {x: -512.8093, y: -1538.2654}
+  m_AnchoredPosition: {x: 0, y: 427}
+  m_SizeDelta: {x: -603.2685, y: -1548.7838}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014031656
 MonoBehaviour:
