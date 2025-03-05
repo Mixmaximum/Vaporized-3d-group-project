@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scorePopUp: {fileID: 9000224050377432558}
-  cores: 2
+  cores: 4
   corePopUp: {fileID: 6008490953520166534}
   coreHoldingPopUp: {fileID: 5118747960430291119}
   maxCores: 0

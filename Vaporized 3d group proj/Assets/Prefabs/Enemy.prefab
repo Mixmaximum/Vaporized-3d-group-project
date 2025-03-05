@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 203.23082, y: 0.26, z: 69.32}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2492127119229525751}
@@ -122,8 +122,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 5
-  m_Acceleration: 8
+  m_Speed: 18
+  m_Acceleration: 10.38
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf95ddd9d0c199438644ac6c25a3266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseDistance: 20
-  genChaseDist: 4
+  chaseDistance: 400.5
+  genChaseDist: 413.51
 --- !u!114 &5553055559171769163
 MonoBehaviour:
   m_ObjectHideFlags: 0
