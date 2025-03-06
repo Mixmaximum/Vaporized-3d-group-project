@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 507535436968723209}
   - component: {fileID: 2971437840485424247}
   - component: {fileID: 8765620798047001014}
+  - component: {fileID: 5425919981995893684}
   m_Layer: 6
   m_Name: Generator
   m_TagString: Generator
@@ -307,6 +308,27 @@ MonoBehaviour:
   chargedCore: {fileID: 5739738183896992221}
   chargebar: {fileID: 5654480777485134519}
   isCharging: 0
+--- !u!95 &5425919981995893684
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234108896184045672}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3809f71ef6745f2498b42411416db56c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5739738183896992221
 GameObject:
   m_ObjectHideFlags: 0
