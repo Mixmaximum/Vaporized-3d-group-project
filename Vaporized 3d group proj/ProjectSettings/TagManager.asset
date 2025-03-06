@@ -14,6 +14,9 @@ TagManager:
   - ChargedCore
   - PauseMenu
   - Spawner
+  - WaveController
+  - UpgradeHUD
+  - Upgrader
   layers:
   - Default
   - TransparentFX

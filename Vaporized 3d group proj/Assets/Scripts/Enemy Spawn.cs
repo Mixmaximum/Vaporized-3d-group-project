@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawn : MonoBehaviour
 {
@@ -19,10 +20,11 @@ public class EnemySpawn : MonoBehaviour
     float currentTime;
     float spawnCounter;
     private Transform Transform;
+    private SpawnWavesController controller;
     // Start is called before the first frame update
     void Start()
     {
-        
+        controller = GameObject.FindGameObjectWithTag("WaveController").GetComponent<SpawnWavesController>();
     }
 
     // Update is called once per frame
@@ -42,7 +44,9 @@ public class EnemySpawn : MonoBehaviour
                 Vector3 randomPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
                 randomPos.x += Random.Range(-spawnRangeX, spawnRangeX);
                 randomPos.z += Random.Range(-spawnRangeZ, spawnRangeZ);
-                Instantiate(enemy, randomPos, Quaternion.identity);
+                GameObject spawn = Instantiate(enemy, randomPos, Quaternion.identity);
+                spawn.GetComponent<EnemyHealth>().health = controller.currentHP;
+                spawn.GetComponent<NavMeshAgent>().speed = controller.currentSpeed;
             }
             currentTime = 0;
            

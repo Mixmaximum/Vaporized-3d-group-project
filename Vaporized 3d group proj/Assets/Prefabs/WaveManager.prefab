@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4859277231805367673}
   - component: {fileID: 4223063266055060630}
+  - component: {fileID: 4873205026174078511}
   m_Layer: 0
   m_Name: WaveManager
-  m_TagString: Untagged
+  m_TagString: WaveController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,5 +51,21 @@ MonoBehaviour:
   enemySpawnScripts: []
   waveTimerText: {fileID: 0}
   waveNumberText: {fileID: 0}
-  waveTimer: 62
+  waveTimer: 30
   addedDifficulty: 0.05
+  waveNumber: 0
+  currentHP: 0
+  currentSpeed: 0
+  spawnAmount: 0
+--- !u!114 &4873205026174078511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730812503954492603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fffb9c3800b2584ba032a894db23b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -33,11 +33,9 @@ public class RaycastInteract : MonoBehaviour
                 interactText.enabled = true; // makes interact text pop up
                 cost = hit.collider.gameObject.GetComponent<ObjectCosts>().cost;
                 score = playerScore.score; // Get the score from the hud and make it a float, keep that updated
-                score = playerScore.score; // Get the score from the hud and make it a float, keep that updated
                 if (score >= cost && Input.GetKeyDown(KeyCode.E))
                 {
                     playerScore.score -= cost; //subtract the cost from the score on the hud
-                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Interact");
                     //we know we hit an interactable object so we trigger the interact trigger
                     hit.collider.gameObject.GetComponent<ObjectCosts>().purchased = true;
                     // sets it to bought
@@ -49,8 +47,7 @@ public class RaycastInteract : MonoBehaviour
                 interactText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hit.collider.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                    hit.collider.gameObject.GetComponent<BoxCollider>().enabled = false;
+                    hit.collider.gameObject.GetComponent<CoreGrab>().grabbed = true;
                     playerScore.holdingCore = true;
                 }
             }
@@ -72,6 +69,17 @@ public class RaycastInteract : MonoBehaviour
                     playerScore.cores++;
                 }
 
+            }
+            if (hit.collider.gameObject.tag == "Upgrader")
+            {
+                interactText.enabled = true;
+                cost = hit.collider.gameObject.GetComponent<UpgraderObject>().cost;
+                score = playerScore.score;
+                if (score >= cost && Input.GetKeyDown(KeyCode.E))
+                {
+                    playerScore.score -= cost;
+                    hit.collider.gameObject.GetComponent<UpgraderObject>().Interact();
+                }
             }
         }
         else

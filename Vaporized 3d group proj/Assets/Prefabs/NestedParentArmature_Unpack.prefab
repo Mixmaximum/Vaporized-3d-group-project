@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 8670826686585387995}
   - component: {fileID: 6558419232161267330}
   - component: {fileID: 8265123786949937957}
+  - component: {fileID: 5853454161692423905}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -827,7 +828,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   shootDist: 20
-  shootDelay: 0.09
+  shootDelay: 0.1
+  shootDamage: 1
 --- !u!114 &6558419232161267330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,7 +861,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 300
   levelToLoad: 
+  maxHealth: 0
   healthBar: {fileID: 0}
+  healthText: {fileID: 0}
+  healthUpgraded: 0
+--- !u!114 &5853454161692423905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381570683980380713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f3e98772867fa4da8fc2944b9c4218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2432599406744916531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3331304993922445628}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.8340512, z: -0, w: 0.5516871}
+  m_LocalRotation: {x: 0, y: -0.8340496, z: 0, w: 0.5516895}
   m_LocalPosition: {x: 209.81, y: -1, z: 61.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
