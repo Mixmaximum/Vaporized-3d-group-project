@@ -1813,7 +1813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 26, y: 2}
+  m_AnchoredPosition: {x: 12, y: 2}
   m_SizeDelta: {x: -824.1076, y: -1546.3765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569854390
@@ -1837,7 +1837,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Assets:  Asphalt materials by VK GameDev \nSimplePoly City by VenCreations\nSkybox
-    Series by Avinox\n"
+    Series by Avinox\nCompact car by Ozgur Saral\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b891a1b570a3b1c45b79ccae1cb6d3b0, type: 2}
   m_sharedMaterial: {fileID: 3704105291827094744, guid: b891a1b570a3b1c45b79ccae1cb6d3b0,
