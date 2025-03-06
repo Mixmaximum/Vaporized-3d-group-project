@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5503009318781921432}
-  - component: {fileID: 3719951618735263654}
   - component: {fileID: 8706146825105532931}
   - component: {fileID: 4971464879615504433}
   - component: {fileID: 4171900315808397684}
   - component: {fileID: 9175399555648633067}
   - component: {fileID: 5138492618499196043}
   - component: {fileID: 5553055559171769163}
+  - component: {fileID: 4046759299436518918}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
@@ -39,14 +39,6 @@ Transform:
   - {fileID: 2492127119229525751}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3719951618735263654
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792694607248518031}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8706146825105532931
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -173,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf95ddd9d0c199438644ac6c25a3266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseDistance: 400.5
-  genChaseDist: 413.51
+  chaseDistance: 700
+  genChaseDist: 700
 --- !u!114 &5553055559171769163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +181,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   scoreWorth: 1
+--- !u!33 &4046759299436518918
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792694607248518031}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2284771405637728044
 GameObject:
   m_ObjectHideFlags: 0
