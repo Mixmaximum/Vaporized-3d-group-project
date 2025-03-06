@@ -76,7 +76,6 @@ public class SpawnWavesController : MonoBehaviour
             //enemyPrefab.GetComponent<EnemyHealth>().health += activeDifficulty;
             currentHP *= activeDifficulty;
             currentSpeed *= activeDifficulty;
-            spawnAmount ++;
             //enemyPrefab.GetComponent<NavMeshAgent>().speed += activeDifficulty;
 
             for (int i = 0; i < spawners.Length; i++)
